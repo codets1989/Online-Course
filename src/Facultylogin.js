@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import './App.css'
-function Login()
+function FacultyLogin()
 {
     const [userregis,setuserregis] =  useState ({
         username:"",
@@ -16,7 +16,7 @@ function Login()
     {
         const dend = JSON.stringify(userregis);
         e.preventDefault();
-         fetch('http://localhost:8000/Login',{
+         fetch('http://localhost:8000/faculty/login',{
             mode: 'cors',
              method :'POST',
              headers : {
@@ -32,8 +32,8 @@ function Login()
     {
             if (la.success === true)
             {
-                localStorage.setItem("id",la.id);
-                window.location.replace("/users/"+la.id)
+                localStorage.setItem("facid",la.id);
+                window.location.replace("/faculty/"+la.id)
             }
             else{
                 alert('Wrong details');
@@ -42,9 +42,9 @@ function Login()
     }
     return(
         <div className="container">
-            <div className="title">Login</div>
+            <div className="title">Faculty Login</div>
       <div className="form">
-      <form className="form1" action="http://localhost:8000/Login" method="POST" onSubmit={loghandler} >
+      <form className="form1" action="http://localhost:8000/faculty/login" method="POST" onSubmit={loghandler} >
           
           <div>
             <label htmlFor="Username">Username</label>
@@ -57,9 +57,9 @@ function Login()
         
        <button className="form2" type="submit" >Login</button>
       </form>
-      <li>  <a href="/faclogin">For Faculty login click here</a> </li>
+      <li>  <a href="/Login">For User login click here</a> </li>
         </div>
         </div>
     );
 } 
-export default Login;
+export default FacultyLogin;

@@ -7,14 +7,14 @@ const languages = [
     { value: 'en', text: "English" },
     { value: 'ne', text: "Nepali" }
 ]
-// const stylesheet ={Title:{fontFamily:"Times"}}
-function Register () {
+const stylesheet ={Title:{fontFamily:"Times"}}
+function Facultyregister () {
     const { t } = useTranslation(); 
   
     const [lang, setLang] = useState('en');
     const handleChange = e => { 
         setLang(e.target.value);
-        let loc = "http://localhost:3000/Register";
+        let loc = "http://localhost:3000/facreg";
         window.location.replace(loc + "?lng=" + e.target.value);
         i18next.changeLanguage(e.target.value)
     }
@@ -43,7 +43,7 @@ function Register () {
       {temp.push(value);
     //   array.push(value);
       }
-      else if (check === false)
+      else if (check == false)
       {
           
           temp.splice(temp.indexOf(value),1)
@@ -60,7 +60,7 @@ function Register () {
         e.preventDefault();
         
         const regdata = JSON.stringify(userdetails);
-        fetch('http://localhost:8000/Register',
+        fetch('http://localhost:8000/faculty/register',
         {
            mode:'cors',
            method:'POST',
@@ -77,44 +77,36 @@ function Register () {
     {
         if(dta.success)
         {
-            window.location.replace("/Login");
+            window.location.replace("/faclogin");
         }
         else
         {
             alert('Something went wrong Plz fill the form again');
-            window.location.replace("/Register");
+            window.location.replace("/facreg");
         }
     }
 return (
     <div className ="container">
+    <div className="title" style={stylesheet.Title}>Registration</div>
     <div className="form">
-    <form action="http://localhost:8000/Register" method="POST" onSubmit={regi}>
+    <form action="http://localhost:8000/faculty/register" method="POST" onSubmit={regi}>
         <div>
             <label htmlFor="name">{t('Full Name')}</label>
-        </div>
-        <div>
-        <input type ="text" name="fullname" id="fullname" value={userdetails.fullname} onChange={handleinput} placeholder={t("Enter your full name")} />
+            <input type ="text" name="fullname" id="fullname" value={userdetails.fullname} onChange={handleinput} placeholder={t("Enter your full name")} />
             <span id="reqspan">*</span>
         </div>
         <div>
           <label htmlFor="Username">{t('Username')}</label>
-           </div>
-           <div>
-           <input type ="text" name="username" id="username" value={userdetails.username} onChange={handleinput}  placeholder="Enter your Username" />
+          <input type ="text" name="username" id="username" value={userdetails.username} onChange={handleinput}  placeholder="Enter your Username" />
           <span id="reqspan">*</span>
-          </div>
-      <div>
-          <label htmlFor="email">Email</label>
       </div>
       <div>
-      <input type ="email" name="email" id="email" autoComplete="off" value={userdetails.email} onChange={handleinput}  placeholder="Enter your email"/>
-      <span id="reqspan">*</span>
+          <label htmlFor="email">Email</label>
+          <input type ="email" name="email" id="email" autoComplete="off" value={userdetails.email} onChange={handleinput}  placeholder="Enter your email"/>
       </div>
       <div>
           <label htmlFor="password">Password</label>
-      </div>
-      <div>
-      <input type ="password" name="password" id="password"value={userdetails.password} onChange={handleinput}  placeholder="Enter your password"/>
+          <input type ="password" name="password" id="password"value={userdetails.password} onChange={handleinput}  placeholder="Enter your password"/>
           <span id="reqspan">*</span>
       </div>
       <div>
@@ -129,23 +121,9 @@ return (
          <label htmlFor="Non-binary">Prefer not to Say</label> 
          <span id="reqspan">*</span>
       </div>
-      <div>
-          Select you area of interests
-          <input type ="checkbox" name="interests" value="Science" onChange={handleinputs} /> 
-          <label htmlFor="Science">Science</label>
-          <input type ="checkbox" name="interests" id="Arts" value="Arts" onChange={handleinputs} /> 
-          <label htmlFor="Arts">Arts</label>
-          <input type ="checkbox" name="interests" value="Humanities" onChange={handleinputs} /> 
-          <label htmlFor="Humanities">Humanities</label>
-          <input type ="checkbox" name="interests" value="Management" onChange={handleinputs} /> 
-          <label htmlFor="Management">Management</label>
-          <input type ="checkbox" name="interests" value="Coding" onChange={handleinputs} /> 
-          <label htmlFor="Coding">Coding</label>
-      </div>
-   
-     <button type="submit" className='subbut'>Submit</button>
+     <button type="submit">Submit</button>
     </form>
-    <li>  <a href="/facreg">For Faculty Register click here</a> </li>
+    <li>  <a href="/Register">For User register click here</a> </li>
   </div>
   <div >
   
@@ -161,5 +139,5 @@ return (
   </div>
 );
 }
-export default Register;
+export default Facultyregister;
 

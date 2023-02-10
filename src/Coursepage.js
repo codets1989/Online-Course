@@ -48,7 +48,6 @@ const Navigate = () =>
 useEffect(()=>
 {
  document.body.style.backgroundImage = "none";
- document.body.style.backgroundColor=" rgb(255, 192, 203)";
  checkcourse();
  
 },[]
@@ -59,12 +58,12 @@ useEffect(()=>
 return(
     <div className="grid-container">
          <div className="menu">
-           <h1>List of Courses</h1>
-           <br/> <a href="/course/Science"> <span className="spanlist">-Science </span> </a>
-           <br/>  <a href="/course/Arts">  <span className="spanlist">-Arts</span> </a>
-           <br/>   <a href="/course/Humanities">  <span className="spanlist">-Huamnities</span> </a>
-           <br/>  <a href="/course/Management">  <span className="spanlist">-Management</span> </a>
-           <br/>  <a href="/course/Coding">  <span className="spanlist">-Coding</span> </a>
+           <h1 className='ltitle'>List of Courses</h1>
+           <br/> <a href="/course/Science" className='alist'> <span className="spanlist">Science </span> </a>
+           <br/>  <a href="/course/Arts" className='alist'>  <span className="spanlist">Arts</span> </a>
+           <br/>   <a href="/course/Humanities" className='alist'>  <span className="spanlist">Humanities</span> </a>
+           <br/>  <a href="/course/Management" className='alist'>  <span className="spanlist">Management</span> </a>
+           <br/>  <a href="/course/Coding" className='alist'>  <span className="spanlist">Coding</span> </a>
       </div>
      
       {cordata.map((item) => {

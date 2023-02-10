@@ -1,0 +1,40 @@
+
+.grid
+{
+   display:grid;
+   grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+   grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.facmenu
+{
+grid-row:1/7;
+border: 3px solid rgb(232, 9, 9) ;
+height: 100%;
+}
+.adcourse
+{
+    grid-column:2/5;
+}
+.user_details
+{
+    grid-column:6/7;
+}
+.userlogo{
+    margin-left: -100px;
+}
+.weltext
+{
+    font-weight: 300;
+    font-size: 32px;
+    margin-left: -56px;
+}
+.top-courses
+{
+    margin-top: 50px;
+    margin-left: -57px;
+}
+.titl-top{
+
+    font-weight: 300;
+    font-size: 32px;
+}

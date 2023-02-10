@@ -15,7 +15,7 @@ function App() {
      <Navbar  /> 
     
      </Route>
-     <Route exact path = {["/users/:userid" ]}>
+     <Route exact path = {["/users/:userid" ,"/course/:courseid","/searchresults"]}>
      <Navbartext/>
      </Route>
     </Switch>

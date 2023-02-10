@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap%27');
 body
 {
     margin:0;
     padding:0;
-    background-image:url("https://images.pexels.com/photos/7354/startup-photos.jpg?cs=srgb&dl=pexels-startup-stock-photos-7354.jpg&fm=jpg");
+    /* background-image:url("https://images.pexels.com/photos/7354/startup-photos.jpg?cs=srgb&dl=pexels-startup-stock-photos-7354.jpg&fm=jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     background-attachment: fixed;
-   
+    font-family: 'Inter', serif;
+
 }
 .navbar
 {
@@ -14,8 +16,11 @@ body
     justify-content: space-around;
     width: 100%;
     height: 50px;
-     background-color:black; 
 
+}
+.title
+{
+    margin-bottom: 40px;
 }
 .navbar ul
 {
@@ -34,7 +39,7 @@ body
 }
 .navbar ul li a
 {
-    color: white;
+    color: rgb(9, 9, 9);
     text-decoration: none;
     font-size:24px;
     padding-left: 30px;  
@@ -48,11 +53,12 @@ body
 .container
 {
 
-    background-color: rgba(255, 255, 255, .4); 
+    /* background-color: rgba(255, 255, 255, .4);  */
     padding:25px 30px;
-    margin-top: 150px;
-    margin-left: 500px;
-    width: 600px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 640px;
     line-height: 300%;
    
 }
@@ -64,4 +70,10 @@ body
    font-size: 25px;
    font-weight:bold;
    position: relative;
+}
+.subbut
+{
+    background-color:rgb(2, 83, 224);
+    color:white;
+    width: 100px;
 }

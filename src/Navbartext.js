@@ -28,7 +28,7 @@ function Navbartext() {
      window.location.replace("/searchresults");
     }    
     return(
-    <div className = "navbar">
+    <div className = "searchnavbar">
          <form className="search-bar" onSubmit={loghandlere}>
          <input type="text" name="usersearch" id="usersearch" defaultValue={usersearch} onChange={handleinput} placeholder="search" />
          <button type="submit">Search</button>
