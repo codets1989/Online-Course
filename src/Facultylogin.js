@@ -32,8 +32,16 @@ function FacultyLogin()
     {
             if (la.success === true)
             {
+                if(la.id = "63ee52954046fcb6888c5475")
+                {
+                localStorage.setItem("adid",la.id);
+                window.location.replace("/admin/"+la.id)
+                }
+                else
+                {
                 localStorage.setItem("facid",la.id);
                 window.location.replace("/faculty/"+la.id)
+                }
             }
             else{
                 alert('Wrong details');
