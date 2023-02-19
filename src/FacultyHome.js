@@ -1,5 +1,5 @@
 import React,{ useState, useEffect} from 'react';
-import logo from './images/web-camera.png'
+import logo from './web-camera.png'
 import Facultyadd from './Facultyadd';
 import Facultyall from './Facultyall';
 import FacultyVerified from './FacultyVerified';

@@ -8,7 +8,6 @@ const Adminun = () =>
     useEffect(()=>
      {
          document.body.style.backgroundImage = "none";
-     
             checkall();
      },[])
      const checkall = () =>
@@ -43,7 +42,8 @@ const Adminun = () =>
      }
      const verify = (id) =>
      {
-        const rec = {"id":item};
+        const rec = {"id":id};
+        console.log(id)
         fetch('http://localhost:8000/admin/verify',{
             mode: 'cors',
              method :'POST',
@@ -64,10 +64,10 @@ const Adminun = () =>
                 p.innerHTML = "Course Verified"
              }
              else{
+                console.log(la)
                 console.log("something went wrong")
              }
      }
-    console.log("HEllo")
     return(
         <div>
             {
@@ -80,7 +80,7 @@ const Adminun = () =>
                         <p>{item.stream}</p>
                         <p>{item.price}</p>
                          {vid(item.video)}
-                         <button id={item._id} onclick={()=>verify(item._id)}>Verify this Course</button>
+                         <button id={item._id} onClick={()=>{verify(item._id)}}>Verify this Course</button>
                         </div>
                    
                   )

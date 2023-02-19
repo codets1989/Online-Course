@@ -8,6 +8,7 @@ import Search from './Search'
 import Facultylogin from './Facultylogin'
 import Facultyregister from './Facultyregister';
 import FacultyHome from './FacultyHome';
+import AdminHome from './admin/AdminHome'
 import {BrowserRouter as Router,Route,Switch } from 'react-router-dom';
 function Change (){
     return (
@@ -28,6 +29,9 @@ function Change (){
                 </Route>
                 <Route exact path="/faculty/:facultyid">
                 <FacultyHome/>
+                </Route>
+                <Route exact path="/admin/:adid">
+                <AdminHome/>
                 </Route>
                 <Route exact path="/facreg">
                 <Facultyregister/>
