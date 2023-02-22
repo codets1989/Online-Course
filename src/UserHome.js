@@ -93,11 +93,11 @@ function UserHome()
         <div className="grid-container">
             <div className="menu">
            <h1 className='ltitle'>List of Courses</h1>
-           <br/> <a href="/course/Science" className='alist'> <span className="spanlist">Science </span> </a>
-           <br/>  <a href="/course/Arts" className='alist'>  <span className="spanlist">Arts</span> </a>
-           <br/>   <a href="/course/Humanities" className='alist'>  <span className="spanlist">Humanities</span> </a>
-           <br/>  <a href="/course/Management" className='alist'>  <span className="spanlist">Management</span> </a>
-           <br/>  <a href="/course/Coding" className='alist'>  <span className="spanlist">Coding</span> </a>
+           <br/> <a href="/users/stream/Science" className='alist'> <span className="spanlist">Science </span> </a>
+           <br/>  <a href="/users/stream/Arts" className='alist'>  <span className="spanlist">Arts</span> </a>
+           <br/>   <a href="/users/stream/Humanities" className='alist'>  <span className="spanlist">Humanities</span> </a>
+           <br/>  <a href="/users/stream/Management" className='alist'>  <span className="spanlist">Management</span> </a>
+           <br/>  <a href="/users/stream/Coding" className='alist'>  <span className="spanlist">Coding</span> </a>
       </div>
         <div className="message">
             <h1> Welcome {datas} </h1>

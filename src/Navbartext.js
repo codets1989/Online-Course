@@ -1,8 +1,10 @@
 import React,{useState} from 'react';
+import logo from './images/home.png'
 import './Navbar.css';
 function Navbartext() {
 
     const [usersearch,setusersearch] =  useState ();
+    const link = localStorage.getItem("id")
     const handleinput = (e) =>
     {
         const value = e.target.value;
@@ -28,12 +30,24 @@ function Navbartext() {
      window.location.replace("/searchresults");
     }    
     return(
-    <div className = "searchnavbar">
+    <div className = "navcontainer">
+        <div>
+
+        </div>
+        <div>
          <form className="search-bar" onSubmit={loghandlere}>
-         <input type="text" name="usersearch" id="usersearch" defaultValue={usersearch} onChange={handleinput} placeholder="search" />
+            <div className='searchtag'>
+         <input type="text" name="usersearch" id="usersearch" defaultValue={usersearch} onChange={handleinput} placeholder="Search" />
+         </div>
          <button type="submit">Search</button>
+        
+        
          </form> 
-   
+         </div>
+         <div> <a href={'//localhost:3000/users/'+ link}><img src={logo} height="40" width="50" alt="homeicon"/></a></div>
+
+     
+         
     </div>
     )
 }

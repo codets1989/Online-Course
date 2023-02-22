@@ -64,8 +64,7 @@ const Navigate = () =>
                    {corr.map((soi) => {
                         return (
                         <div className="coursecontainer"> 
-                          <span>Course_id:{soi.course_id}</span>
-                          <br/> <span>Name:{soi.course_name}</span>
+                          <br/> <a href={"course/"+ soi._id}> <span>{soi.name}</span></a>
                           <br/> <span>Faculty:{soi.faculty}</span>
                           <br/> <span>Stream:{soi.stream}</span>
                           <br/> <span>Price:{soi.price}</span>

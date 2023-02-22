@@ -37,3 +37,32 @@
     height: 48px;
 
 }
+.navcontainer
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.search-bar
+{
+    width: 70%;
+    flex-grow: 3;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 150px;
+    padding-top: 5px;
+}
+.navimage
+{
+    border: 2px solid black;
+    float: right;
+    height: 40px;
+    width: 40px;
+}
+#usersearch
+{
+    width: 600px;
+}

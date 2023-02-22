@@ -8,18 +8,16 @@ function App() {
   return (
    
     <Router>
-    <div className = "navbar">
     <Switch>
       
     <Route exact path = {["/", "/Login", "/Register" ]}>
      <Navbar  /> 
     
      </Route>
-     <Route exact path = {["/users/:userid" ,"/course/:courseid","/searchresults"]}>
+     <Route exact path = {["/users/:userid" ,"/users/stream/:courseid","/searchresults","/users/course/:courseid"]}>
      <Navbartext/>
      </Route>
     </Switch>
-     </div>
      </Router>
   );
 }

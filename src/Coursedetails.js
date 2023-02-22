@@ -1,5 +1,4 @@
 import {useEffect,useState} from 'react';
-import {Redirect, useParams} from 'react-router-dom';
 import './App2.css'
 function Coursedetails(course)
 {
@@ -53,8 +52,7 @@ function Coursedetails(course)
     {corpdata.map((item) => {
         return (
         <div className="coursecontainer"> 
-          <span>Course_id:{item.course_id}</span>
-          <br/> <span>Name:{item.course_name}</span>
+          <br/> <a href={"course/"+ item._id}> <span>{item.name}</span></a>
           <br/> <span>Faculty:{item.faculty}</span>
           <br/> <span>Stream:{item.stream}</span>
           <br/> <span>Price:{item.price}</span>

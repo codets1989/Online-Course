@@ -40,12 +40,6 @@
 }
 
 
-.search-bar
-{
-    padding-top: 15px;
-    padding-left:100px;
-    
-}
 input[type=text],input[type=email],input[type=password]
 {
     padding: 7px;

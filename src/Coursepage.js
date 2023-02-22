@@ -1,5 +1,5 @@
 import {useEffect,useState} from 'react';
-import {Redirect, useParams} from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 
 function Coursepage ()
 {
@@ -59,18 +59,17 @@ return(
     <div className="grid-container">
          <div className="menu">
            <h1 className='ltitle'>List of Courses</h1>
-           <br/> <a href="/course/Science" className='alist'> <span className="spanlist">Science </span> </a>
-           <br/>  <a href="/course/Arts" className='alist'>  <span className="spanlist">Arts</span> </a>
-           <br/>   <a href="/course/Humanities" className='alist'>  <span className="spanlist">Humanities</span> </a>
-           <br/>  <a href="/course/Management" className='alist'>  <span className="spanlist">Management</span> </a>
-           <br/>  <a href="/course/Coding" className='alist'>  <span className="spanlist">Coding</span> </a>
+           <br/> <a href="/users/stream/Science" className='alist'> <span className="spanlist">Science </span> </a>
+           <br/>  <a href="/users/stream/Arts" className='alist'>  <span className="spanlist">Arts</span> </a>
+           <br/>   <a href="/users/stream/Humanities" className='alist'>  <span className="spanlist">Humanities</span> </a>
+           <br/>  <a href="/users/stream/Management" className='alist'>  <span className="spanlist">Management</span> </a>
+           <br/>  <a href="/users/stream/Coding" className='alist'>  <span className="spanlist">Coding</span> </a>
       </div>
      
       {cordata.map((item) => {
           return (
           <div className="coursecontainer"> 
-            <span>Course_id:{item.course_id}</span>
-            <br/> <span>Name:{item.course_name}</span>
+            <br/> <a href={"//localhost:3000/users/course/"+ item._id}> <span>{item.name}</span></a>
             <br/> <span>Faculty:{item.faculty}</span>
             <br/> <span>Stream:{item.stream}</span>
             <br/> <span>Price:{item.price}</span>

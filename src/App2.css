@@ -37,6 +37,12 @@ body
  grid-row:1/7;
  border-right: 3px solid rgb(255, 255, 255) ;
 }
+.cospage
+{
+    grid-row: 1/7;
+    grid-column: 2/7;
+    border:2px solid black;
+}
 .message
 {
     grid-column: 2/7;
@@ -138,4 +144,20 @@ padding: 10px;
 {
     margin-left: 20px;
     margin-top: 80px;
+}
+.cortitle
+{
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+.coscon
+{
+   display: flex;
+   flex-direction: column;
+}
+.videocon
+{
+    margin-top: 20px;
+    margin-left: 280px;
 }
