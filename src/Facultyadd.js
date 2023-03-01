@@ -16,8 +16,8 @@ function Facultyadd() {
     const Vidup1 = (counter) => {
         return (<div>
             {console.log(counter.counter)}
-        <input type="file" name={counter.counter} onChange={(e)=>handleChange(e,counter.counter)} accept="video/*" />
-        <p id={counter.counter}>Upload</p>
+        <input type="file" name={counter.counter} className="facin"  onChange={(e)=>handleChange(e,counter.counter)} accept="video/*" />
+        <p id={counter.counter} className="faclab">Not Uploaded</p>
          </div>)
       };
     const [vidup,setvidup] = useState([])
@@ -129,41 +129,61 @@ function Facultyadd() {
                     setfacdetails({...facdetails,video:temp})
                         console.log(co)
                         const p = document.getElementById(co)
-                        p.innerHTML= 'done'
+                        p.innerHTML= 'Upload done'
            });
            }
         );
     };
 
     return(
-    <div>
-             <div>
-             <form action="" method="POST" onSubmit={sendfac}>
+    <div className="facadde">
+           
+             <form action="" method="POST" className="facform" onSubmit={sendfac}>
+                <h2>Add Course</h2>
               <div> 
-                
-                <input type="text" name="course_name" onChange={handleinput}/>
+                <label for = "course_name" className="faclab">Course Name</label>
+                <br></br>
+                <br></br>
+                <input type="text" name="course_name" className="facin" onChange={handleinput}/>
+                <br></br>
+                <br></br>
                 </div> 
                 <div>
-                <input type="text" name="price" onChange={handleinput}/>
+                <label for = "price" className="faclab">Course Price</label>
+                 <br></br>
+                 <br></br>
+                 
+                <input type="text" name="price" className="facin" onChange={handleinput}/>
                 </div>  
                 <div>
-                    <select name="stream" onChange={handleinput}>
+                    <br></br>
+                    <br></br>
+                    <label for="stream" className="faclab">Select Stream</label>
+                    <br></br>
+                    <br></br>
+                    <select name="stream" className="facselect" onChange={handleinput}>
                      <option value='Coding'>Coding</option>
                      <option value='Management'>Management</option>
                      <option value='Science'>Science</option>
                      <option value='Arts'>Arts</option>
                      <option value='Humanities'>Humanities</option>
                     </select>
+                    <br></br>
+                    <br></br>
                 </div>
                 <div>
-                    <input type="file" name="file" onChange={(e)=>handleChange(e,0)}  accept="video/*" />
-                    <p id='0'> Upload</p> 
+                    <input type="file" name="file" className="facin"  onChange={(e)=>handleChange(e,0)}  accept="video/*" />
+                    <p id='0' className="faclab">Not Uploaded</p> 
                 </div>
                 {vidup}
-                <button type="button" onClick={adddiv}>Add More Videos</button>
-                <button type="submit" >Submit</button>
-                </form>
+                <div>
+                <button type="button" className="addfacb" onClick={adddiv}>Add More Videos</button>
+                <br></br>
+                <br></br>
+                <button type="submit" className="addfacb" >Submit</button>
                 </div>
+                </form>
+               
                 
     </div>
 )

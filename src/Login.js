@@ -48,11 +48,11 @@ function Login()
           
           <div>
             <label htmlFor="Username">Username</label>
-            <input type ="text" name="username" id="username" value={userregis.username} onChange={handleinput}  placeholder="Enter your Username" />
+            <input type ="text" name="username" id="username" value={userregis.username} className='regin' onChange={handleinput}  placeholder="Enter your Username" />
         </div>
         <div>
             <label htmlFor="password">Password</label>
-            <input type ="password" name="password" id="password" value={userregis.password}  onChange={handleinput}  placeholder="Enter your password"/>
+            <input type ="password" name="password" id="password" value={userregis.password} className='regin' onChange={handleinput}  placeholder="Enter your password"/>
         </div>
         
        <button className="form2" type="submit" >Login</button>

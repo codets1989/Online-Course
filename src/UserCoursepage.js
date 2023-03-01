@@ -1,5 +1,6 @@
 import React ,{ useState , useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { dropdata , printdata , Menu} from "./function/functionlist";
 const UserCoursepage= () =>
 {
     let i=0;
@@ -19,18 +20,19 @@ const UserCoursepage= () =>
        }
        return content
     }
-    const adds = ( ca,ia) =>
+    const adds = ( ca , io) =>
     {
-         if (ca === true)
+        const cat = localStorage.getItem("id")
+         if (ca.includes(cat))
          {
             return(
-           <button className="add">Add Course</button>
+           <button className="Drop sos" onClick={()=>dropdata(io)}>Drop Course</button>
             )
          }
          else{
             console.log(ca)
             return(
-                <button className="Drop">Drop Course</button>
+                <button className="add sos" onClick={()=>printdata(io)}>Add Course</button>
             )
           
          }
@@ -62,21 +64,14 @@ const checkcourse = () =>
     
  return(
     <div className="grid-container">
-        <div className="menu">
-           <h1 className='ltitle'>List of Courses</h1>
-           <br/> <a href="/users/stream/Science" className='alist'> <span className="spanlist">Science </span> </a>
-           <br/>  <a href="/users/stream/Arts" className='alist'>  <span className="spanlist">Arts</span> </a>
-           <br/>   <a href="/users/stream/Humanities" className='alist'>  <span className="spanlist">Humanities</span> </a>
-           <br/>  <a href="/users/stream/Management" className='alist'>  <span className="spanlist">Management</span> </a>
-           <br/>  <a href="/users/stream/Coding" className='alist'>  <span className="spanlist">Coding</span> </a>
-      </div>
+        <Menu/>
         <div className="cospage">
         {cordata.map((item) => {
           return (
           <div className="coscon" > 
              <a href={item._id} className="cortitle" ><h2>{item.name}</h2></a>
            {vid(item.video)}
-              {adds(item.success,item._id) }
+              {adds(item.students,item._id) }
           </div>
           )
       })}

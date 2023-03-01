@@ -161,3 +161,23 @@ padding: 10px;
     margin-top: 20px;
     margin-left: 280px;
 }
+.log
+{
+    margin-top: 280px;
+    margin-left: 40px;
+    text-decoration: none;
+    color: rgb(23, 21, 21);
+}
+.logi
+{
+    font-size: 24px;
+    cursor: pointer;
+}
+.sos{
+    width: 10%;
+    position: relative;
+    float: right;
+    margin-left: 80rem;
+    margin-top: 5rem;
+    cursor: pointer;
+}

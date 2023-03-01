@@ -1,6 +1,6 @@
 import {useEffect,useState} from 'react';
 import { useParams} from 'react-router-dom'
-
+import {Menu} from './function/functionlist'
 function Coursepage ()
 {
  const [cordata,setcordata] = useState([
@@ -57,14 +57,7 @@ useEffect(()=>
 //   },[cordata])
 return(
     <div className="grid-container">
-         <div className="menu">
-           <h1 className='ltitle'>List of Courses</h1>
-           <br/> <a href="/users/stream/Science" className='alist'> <span className="spanlist">Science </span> </a>
-           <br/>  <a href="/users/stream/Arts" className='alist'>  <span className="spanlist">Arts</span> </a>
-           <br/>   <a href="/users/stream/Humanities" className='alist'>  <span className="spanlist">Humanities</span> </a>
-           <br/>  <a href="/users/stream/Management" className='alist'>  <span className="spanlist">Management</span> </a>
-           <br/>  <a href="/users/stream/Coding" className='alist'>  <span className="spanlist">Coding</span> </a>
-      </div>
+        <Menu/>
      
       {cordata.map((item) => {
           return (

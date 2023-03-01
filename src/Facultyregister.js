@@ -92,21 +92,21 @@ return (
     <form action="http://localhost:8000/faculty/register" method="POST" onSubmit={regi}>
         <div>
             <label htmlFor="name">{t('Full Name')}</label>
-            <input type ="text" name="fullname" id="fullname" value={userdetails.fullname} onChange={handleinput} placeholder={t("Enter your full name")} />
+            <input type ="text" name="fullname" id="fullname" className='regin' value={userdetails.fullname} onChange={handleinput} placeholder={t("Enter your full name")} />
             <span id="reqspan">*</span>
         </div>
         <div>
           <label htmlFor="Username">{t('Username')}</label>
-          <input type ="text" name="username" id="username" value={userdetails.username} onChange={handleinput}  placeholder="Enter your Username" />
+          <input type ="text" name="username" id="username" className='regin' value={userdetails.username} onChange={handleinput}  placeholder="Enter your Username" />
           <span id="reqspan">*</span>
       </div>
       <div>
           <label htmlFor="email">Email</label>
-          <input type ="email" name="email" id="email" autoComplete="off" value={userdetails.email} onChange={handleinput}  placeholder="Enter your email"/>
+          <input type ="email" name="email" id="email"  className='regin' autoComplete="off" value={userdetails.email} onChange={handleinput}  placeholder="Enter your email"/>
       </div>
       <div>
           <label htmlFor="password">Password</label>
-          <input type ="password" name="password" id="password"value={userdetails.password} onChange={handleinput}  placeholder="Enter your password"/>
+          <input type ="password" name="password" id="password" className='regin' value={userdetails.password} onChange={handleinput}  placeholder="Enter your password"/>
           <span id="reqspan">*</span>
       </div>
       <div>

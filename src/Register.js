@@ -93,28 +93,28 @@ return (
             <label htmlFor="name">{t('Full Name')}</label>
         </div>
         <div>
-        <input type ="text" name="fullname" id="fullname" value={userdetails.fullname} onChange={handleinput} placeholder={t("Enter your full name")} />
+        <input type ="text" name="fullname" id="fullname" className='regin' value={userdetails.fullname} onChange={handleinput} placeholder={t("Enter your full name")} />
             <span id="reqspan">*</span>
         </div>
         <div>
           <label htmlFor="Username">{t('Username')}</label>
            </div>
            <div>
-           <input type ="text" name="username" id="username" value={userdetails.username} onChange={handleinput}  placeholder="Enter your Username" />
+           <input type ="text" name="username" id="username" className='regin' value={userdetails.username} onChange={handleinput}  placeholder="Enter your Username" />
           <span id="reqspan">*</span>
           </div>
       <div>
           <label htmlFor="email">Email</label>
       </div>
       <div>
-      <input type ="email" name="email" id="email" autoComplete="off" value={userdetails.email} onChange={handleinput}  placeholder="Enter your email"/>
+      <input type ="email" name="email" id="email" autoComplete="off"  className='regin' value={userdetails.email} onChange={handleinput}  placeholder="Enter your email"/>
       <span id="reqspan">*</span>
       </div>
       <div>
           <label htmlFor="password">Password</label>
       </div>
       <div>
-      <input type ="password" name="password" id="password"value={userdetails.password} onChange={handleinput}  placeholder="Enter your password"/>
+      <input type ="password" name="password" id="password" className='regin' value={userdetails.password} onChange={handleinput}  placeholder="Enter your password"/>
           <span id="reqspan">*</span>
       </div>
       <div>
