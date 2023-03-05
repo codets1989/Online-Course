@@ -14,6 +14,7 @@ flex-direction: column;
 justify-content: start;
 row-gap: 30px;
 text-align: center;
+overflow: hidden;
 }
 .adcourse
 {
@@ -23,6 +24,7 @@ text-align: center;
 .user_details
 {
     grid-column:6/7;
+    grid-row: 1/7;
 }
 .userlogo{
     margin-left: -80px;
@@ -94,4 +96,50 @@ text-align: center;
 {
     display: flex;
     font-size: 20px;
+}
+.factable,th,td
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 20px;
+}
+.factable
+{
+    width: 100%;
+   
+}
+.factabhead
+{
+    border: 1px solid black;
+    background-color: #29aad8;
+}
+.emp
+{
+    width: 200px;
+    border: none;
+    font-size: 20px;
+}
+.tabtitle
+{
+    text-align: center;
+}
+.facho
+{
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+}
+.faclog
+{
+    margin-top: 480px;
+}
+.adprofile
+{
+    margin-left: 100px;
+    position: relative;
+    top: 100px;
+}
+.adfaclog
+{
+    margin-top: 200px;
 }

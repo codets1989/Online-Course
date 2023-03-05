@@ -25,14 +25,15 @@ function FacultyLogin()
              },
              body:dend
          }).then((result)=>result.json()).then(data=>{
-          check(data)   })
+          check(data)  })
         
     }
     const check = (la) =>
     {
             if (la.success === true)
             {
-                if(la.id = "63ee52954046fcb6888c5475")
+                
+                if(la.id === "63ee52954046fcb6888c5475")
                 {
                 localStorage.setItem("adid",la.id);
                 window.location.replace("/admin/"+la.id)
@@ -45,7 +46,7 @@ function FacultyLogin()
             }
             else{
                 alert('Wrong details');
-                window.location.replace("/Login");
+                window.location.replace("/faclogin");
             }
     }
     return(

@@ -1,15 +1,24 @@
 import React,{ useState, useEffect} from 'react';
-import logo from '../web-camera.png'
+import { chee , logoutt } from '../function/facultyfunlist';
+import logo from '../images/user.png'
+import top1 from '../images/reading.png'
+import top2 from '../images/read.png'
+import top3 from '../images/study.png'
+import log from '../images/logout.png'
 import Adminun from './Adminun';
 import  '../Faculty.css';
 function AdminHome()
 {
+    var i = 0;
+    const [isLoading, setLoading] = useState(true);
      const [datas, setdatas] = useState();
+     const [tl,settl] = useState([[],[],[]])
      useEffect(()=>
      {
          document.body.style.backgroundImage = "none";
      
             checklogin();
+            top();
      },[])
     const checklogin = () =>
     {
@@ -29,6 +38,26 @@ function AdminHome()
                 })
                 
             }
+            const top = async() => 
+            {
+                    await fetch('http://localhost:8000/admin/top',{
+                        mode: 'cors',
+                         method :'GET',
+                         headers : {
+                             'Accept' : 'application/json',
+                             'Content-type' : 'application/json'
+                         },
+                     }).then((result)=>result.json()).then(data=>{
+                        console.log(data.length);
+                        for (i=0;i<data.length;i++)
+                        {
+                          tl[i] = data[i]
+                        }
+                        setLoading(false)
+                        console.log(tl[0])
+                        })
+                        
+                    }
      const [ch,setch] = useState(<Adminun/>)
      const chpage = (a) =>
      {
@@ -50,12 +79,16 @@ function AdminHome()
         //   }
 
      }
+     if (isLoading) {
+        return <div className="App">Loading...</div>;
+      }
     return(
              <div className="grid">
                 <div className="facmenu">
                        <a onClick={()=>chpage(0)}>Unverified Courses</a>
                        <a onClick={()=>chpage(1)}>Ban User or Faculty</a>
                        <a onClick={()=>chpage(2)}>Progress of the System</a>
+                       <div className='faclog' onClick={()=>logoutt()}><span className='logi'>Logout<img src = {log} alt="logout" className="logout" height="25" width="25"/></span></div>
                 </div>
       
                 <div className='adcourse'>
@@ -72,6 +105,15 @@ function AdminHome()
                        </div>
                        <div className='top-courses'>
                         <span className='titl-top'>Top Courses</span>
+                        <div className='topl'>
+                        <img src={top1} alt='usericon' height='50'  width='50' className='toplogo'/><p>{chee(tl[0])}</p> 
+                        </div>
+                        <div className='topl' >
+                        <img src={top2} alt='usericon' height='50'  width='50' className='toplogo'/> <p>{chee(tl[1])}</p> 
+                        </div>
+                        <div className='topl'>
+                        <img src={top3} alt='usericon' height='50'  width='50' className='toplogo'/> <p>{chee(tl[2])}</p> 
+                        </div>
                        </div>
                 </div>
              </div>

@@ -3,11 +3,12 @@ import logo from './images/user.png'
 import top1 from './images/reading.png'
 import top2 from './images/read.png'
 import top3 from './images/study.png'
+import log from './images/logout.png'
 import Facultyadd from './Facultyadd';
 import Facultyall from './Facultyall';
 import FacultyVerified from './FacultyVerified';
 import FacultyUnVerified from './FacultyUnverified';
-import { chee } from './function/facultyfunlist';
+import { chee ,logoutt} from './function/facultyfunlist';
 import './Faculty.css';
 function FacultyHome()
 {
@@ -87,10 +88,12 @@ function FacultyHome()
     return(
              <div className="grid">
                 <div className="facmenu">
+                    
                        <span className='clicke' onClick={()=>chpage(0)}>Add Course</span>
                        <span className='clicke' onClick={()=>chpage(1)}>All Courses</span>
                        <span className='clicke'  onClick={()=>chpage(2)}>Verified Courses</span>
                        <span  className='clicke' onClick={()=>chpage(3)}>Unverified Courses</span>
+                       <div className='faclog' onClick={()=>logoutt()}><span className='logi'>Logout<img src = {log} alt="logout" className="logout" height="25" width="25"/></span></div>
                 </div>
       
                 <div className='adcourse'>

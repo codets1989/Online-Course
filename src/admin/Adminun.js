@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from "react";
+import { emp } from "../function/facultyfunlist";
 const Adminun = () =>
 {
-    let i=0;
+    
     const [corpdata,setcorpdata] = useState([
      
     ]);
@@ -28,18 +29,19 @@ const Adminun = () =>
                 })
                 
             }
-     const vid = (vi) =>
-     {
-        const vis = vi.length-1
-        console.log(vi)
-        let content = []
-        for(i=0; i<=vis;i++)
-        {
-            content.push( <p>{vi[i]}</p>)
+            
+    //  const vid = (vi) =>
+    //  {
+    //     const vis = vi.length-1
+    //     console.log(vi)
+    //     let content = []
+    //     for(i=0; i<=vis;i++)
+    //     {
+    //         content.push( <p>{vi[i]}</p>)
            
-        }
-        return content
-     }
+    //     }
+    //     return content
+    //  }
      const verify = (id) =>
      {
         const rec = {"id":id};
@@ -70,23 +72,56 @@ const Adminun = () =>
      }
     return(
         <div>
+        <h2 className="tabtitle">Verified Courses</h2>
+        <table className="factable">
+           <thead className="factabhead">
+               <tr>
+                   <th>Course Name</th>
+                   <th>Status</th>
+                   <th>Stream</th>
+                   <th>Price</th>
+                   <th>No. of Videos</th>
+                   <th>No. of Students</th>
+               </tr>
+           </thead>
+           <tbody>
             {
-                corpdata.map((item)=>
-                {
-                  return(
-                    <div>
-                        <p>{item.name}</p>
-                        <p>{item.status}</p>
-                        <p>{item.stream}</p>
-                        <p>{item.price}</p>
-                         {vid(item.video)}
-                         <button id={item._id} onClick={()=>{verify(item._id)}}>Verify this Course</button>
-                        </div>
+            emp(corpdata)
+            ?<tr className="emp"><td >No results</td><td >No results</td><td >No results</td><td >No results</td><td >No results</td><td >No results</td> </tr>
+            : console.log()
+
+}
+   {
+    
+       corpdata.map((item)=>
+       {
+         return(
+           <tr key={item._id}>
+          
+               <th><a href={"course/"+ item._id}>{item.name}</a></th>
+               <th>{item.status}</th>
+               <th>{item.stream}</th>
+               <th>Rs. {item.price}</th>
+               <th>{item.video.length}</th>
+               <th>  { <button id={item._id} onClick={()=>{verify(item._id)}}>Verify this Course</button>}</th>
+               
+              
+                </tr>
+         )
+       })
+   }
+   </tbody>
+ 
+</table>
+</div>
+            
+               
+                 
+                 
+                     
                    
-                  )
-                })
-            }
-        </div>
+          
+        
     )
 }
 export default Adminun;
