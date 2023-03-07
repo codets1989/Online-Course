@@ -71,7 +71,7 @@ const FacultyVerified = () =>
          return(
            <tr key={item._id}>
           
-               <th>{item.name}</th>
+               <th><a href={"course/"+ item._id}>{item.name}</a></th>
                <th>{item.status}</th>
                <th>{item.stream}</th>
                <th>Rs. {item.price}</th>

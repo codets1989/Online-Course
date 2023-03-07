@@ -38,13 +38,19 @@ const logoutt = (e)=>
     localStorage.removeItem("facid")
     Navhome();
 }
+const adminlogout = (e)=>
+{
+    localStorage.removeItem("adid")
+    Navhome();
+}
 const Navhome = () =>
 {
    window.location.replace("http://localhost:3000")
 } 
 const verify = (id) =>
 {
-   const rec = {"id":id};
+   const item = localStorage.getItem("adid")
+   const rec = {"id":id,"item":item};
    console.log(id)
    fetch('http://localhost:8000/admin/verify',{
        mode: 'cors',
@@ -70,4 +76,4 @@ const cha = (la) =>
            console.log("something went wrong")
         }
 } 
-export  {chee,chea,emp,logoutt,verify}
+export  {chee,chea,emp,logoutt,verify,adminlogout}

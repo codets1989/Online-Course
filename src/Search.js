@@ -61,7 +61,7 @@ const Navigate = () =>
                           <br/> <a href={"course/"+ soi._id}> <span>{soi.name}</span></a>
                           <br/> <span>Faculty:{soi.faculty}</span>
                           <br/> <span>Stream:{soi.stream}</span>
-                          <br/> <span>Price:{soi.price}</span>
+                          <br/> <span>Price:Rs.{soi.price}</span>
                           <br/> <button className="add" onClick={()=> printdata(soi._id)}>Add Course</button> 
                         </div>
                         )

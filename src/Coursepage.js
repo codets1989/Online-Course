@@ -65,7 +65,7 @@ return(
             <br/> <a href={"//localhost:3000/users/course/"+ item._id}> <span>{item.name}</span></a>
             <br/> <span>Faculty:{item.faculty}</span>
             <br/> <span>Stream:{item.stream}</span>
-            <br/> <span>Price:{item.price}</span>
+            <br/> <span>Price:Rs.{item.price}</span>
             <br/> <button className="add" onClick={()=> printdata(item._id)}>Add Course</button> 
           </div>
           )

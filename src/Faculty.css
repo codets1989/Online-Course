@@ -143,3 +143,15 @@ overflow: hidden;
 {
     margin-top: 200px;
 }
+.bantitle
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.banselect
+{
+    height: 40px;
+    width: 100px;
+    margin-top: 30px;
+}

@@ -1,10 +1,10 @@
 import React,{ useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { verify , adminlogout} from '../function/facultyfunlist';
-import logo from '../images/user.png'
-import log from '../images/logout.png'
-import  '../Faculty.css';
-const  AdminCourse = () =>
+import {  logoutt } from './function/facultyfunlist';
+import logo from './images/user.png'
+import log from './images/logout.png'
+import  './Faculty.css';
+const  FacultyCourse = () =>
 {
     var i = 0;
     const {courseid}= useParams();
@@ -21,7 +21,7 @@ const  AdminCourse = () =>
      },[])
     const checklogin = () =>
     {
-           const item = localStorage.getItem("adid");
+           const item = localStorage.getItem("facid");
            const rec = {"id":item};
         //    console.log(item);
             fetch('http://localhost:8000/faculty/users',{
@@ -78,7 +78,7 @@ if (isLoading) {
                <div className='adprofile'>
                        <img src={logo} alt='usericon' height='300'  width='300' className='userlogo'/> 
                        <span className='weltext'>Welcome {datas}</span>
-                       <div className='adfaclog' onClick={()=>adminlogout()}><span className='logi'>Logout<img src = {log} alt="logout" className="logout" height="25" width="25"/></span></div>
+                       <div className='adfaclog' onClick={()=>logoutt()}><span className='logi'>Logout<img src = {log} alt="logout" className="logout" height="25" width="25"/></span></div>
                        </div>
                </div>
                <div className="cospage">
@@ -87,7 +87,6 @@ if (isLoading) {
           <div className="coscon" > 
              <a href={item._id} className="cortitle" ><h2>{item.name}</h2></a>
            {vid(item.video)}
-           <button id={item._id} onClick={()=>{verify(item._id)}}>Verify this Course</button>
           </div>
           )
       })}
@@ -95,10 +94,10 @@ if (isLoading) {
             
 
              
-            \
+          
           
              </div>
     )
 
 }
-export default AdminCourse;
+export default FacultyCourse;

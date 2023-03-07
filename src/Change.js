@@ -11,6 +11,7 @@ import FacultyHome from './FacultyHome';
 import AdminHome from './admin/AdminHome'
 import UserCoursepage from './UserCoursepage';
 import AdminCourse from './admin/AdminCourse';
+import FacultyCourse from './FacultyCourse';
 import {BrowserRouter as Router,Route,Switch } from 'react-router-dom';
 function Change (){
     return (
@@ -31,6 +32,9 @@ function Change (){
                 </Route>
                 <Route exact path="/faculty/:facultyid">
                 <FacultyHome/>
+                </Route>
+                <Route exact path="/faculty/course/:courseid">
+                <FacultyCourse/>
                 </Route>
                 <Route exact path="/admin/:adid">
                 <AdminHome/>

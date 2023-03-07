@@ -30,19 +30,19 @@ const FacultyUnVerified = () =>
                 })
                 
             }
-     const vid = (vi) =>
-     {
-        const vis = vi.length-1
-        console.log(vi)
-        let content = []
-        for(i=0; i<=vis;i++)
-        {
-            content.push( <p>{vi[i]}</p>)
+    //  const vid = (vi) =>
+    //  {
+    //     const vis = vi.length-1
+    //     console.log(vi)
+    //     let content = []
+    //     for(i=0; i<=vis;i++)
+    //     {
+    //         content.push( <p>{vi[i]}</p>)
            
-        }
-        return content
-     }
-    console.log("HEllo")
+    //     }
+    //     return content
+    //  }
+    // console.log("HEllo")
     return(
         <div>
         <h2 className="tabtitle">Unverified Courses</h2>
@@ -71,7 +71,7 @@ const FacultyUnVerified = () =>
          return(
            <tr key={item._id}>
           
-               <th>{item.name}</th>
+               <th><a href={"course/"+ item._id}>{item.name}</a></th>
                <th>{item.status}</th>
                <th>{item.stream}</th>
                <th>Rs. {item.price}</th>

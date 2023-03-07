@@ -44,8 +44,8 @@ const Adminun = () =>
     //  }
      const verify = (id) =>
      {
-        const rec = {"id":id};
-        console.log(id)
+        const item = localStorage.getItem("adid");
+        const rec = {"id":id,"item":item};
         fetch('http://localhost:8000/admin/verify',{
             mode: 'cors',
              method :'POST',

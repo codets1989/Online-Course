@@ -12,10 +12,11 @@ function UserHome()
     {
         if (course.length===0)
         {
-            // console.log(true);
+            console.log("zerocourse");
             return true;
         }
         else{
+
             return false;
         }
     }
@@ -100,8 +101,8 @@ function UserHome()
         </div>
         </div>
         <div className="courses">
-        { isLoggedIn() 
-        ? <div className="coursecontainers" > <h1>You have not enrolled in any course.To enroll in a course plz Search or add them from the menu in left side</h1> </div>
+        { isLoggedIn()
+        ? <div className="coursecontainers"><h1>You have not enrolled in any course.To enroll in a course plz Search or add them from the menu in left side</h1> </div>
         : <Coursedetails course={course}/>
       }
       <div className="notification">

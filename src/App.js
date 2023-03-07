@@ -19,7 +19,7 @@ function App() {
      <Route exact path = {["/users/:userid" ,"/users/stream/:courseid","/searchresults","/users/course/:courseid"]}>
      <Navbartext/>
      </Route>
-     <Route exact path = {["/faculty/:facid"]}>
+     <Route exact path = {["/faculty/:facid","/faculty/course/:courseid"]}>
      <FacNavbar/>
     
      </Route>
