@@ -105,7 +105,7 @@ function UserHome()
         ? <div className="coursecontainers"><h1>You have not enrolled in any course.To enroll in a course plz Search or add them from the menu in left side</h1> </div>
         : <Coursedetails course={course}/>
       }
-      <div className="notification">
+      {/* <div className="notification">
       <button id="close" onClick={closeb}>*</button>
             <span id= "notxt"> From our guess , we think you might like {interest.map((item)=>
             {
@@ -117,7 +117,7 @@ function UserHome()
         <span>  </span>       Do you want to add this Course? </span>
            <br/> <button  className="add" onClick={()=> printdata()}>Add Course</button>
 
-        </div>
+        </div> */}
         </div>
         
         </div>

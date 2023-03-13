@@ -87,7 +87,7 @@ function Facultyregister () {
     }
 return (
     <div className ="container">
-    <div className="title" style={stylesheet.Title}>Registration</div>
+    <div className="title" style={stylesheet.Title}>{t("Faculty Registration")}</div>
     <div className="form">
     <form action="http://localhost:8000/faculty/register" method="POST" onSubmit={regi}>
         <div>
@@ -101,29 +101,29 @@ return (
           <span id="reqspan">*</span>
       </div>
       <div>
-          <label htmlFor="email">Email</label>
-          <input type ="email" name="email" id="email"  className='regin' autoComplete="off" value={userdetails.email} onChange={handleinput}  placeholder="Enter your email"/>
+          <label htmlFor="email">{t("Email")}</label>
+          <input type ="email" name="email" id="email"  className='regin' autoComplete="off" value={userdetails.email} onChange={handleinput}  placeholder={t("Enter your email")}/>
       </div>
       <div>
-          <label htmlFor="password">Password</label>
-          <input type ="password" name="password" id="password" className='regin' value={userdetails.password} onChange={handleinput}  placeholder="Enter your password"/>
+          <label htmlFor="password">{t("Password")}</label>
+          <input type ="password" name="password" id="password" className='regin' value={userdetails.password} onChange={handleinput}  placeholder={t("Enter your password")}/>
           <span id="reqspan">*</span>
       </div>
       <div>
-         Gender
+      {t("Gender")}
          <input type ="radio" name="gender" id="male" value="male" onChange={handleinput} /> 
-         <label htmlFor="Male">Male</label>
+         <label htmlFor="Male">{t("Male")}</label>
          <input type ="radio" name="gender" id="Female" value="Female" onChange={handleinput}/>
-         <label htmlFor="Female">Female</label> 
+         <label htmlFor="Female">{t("Female")}</label> 
          <input type ="radio" name="gender" id="Non-binary" value="Non-binary" onChange={handleinput}/> 
-         <label htmlFor="Non-binary">Non-binary</label>
+         <label htmlFor="Non-binary">{t("Non-binary")}</label>
          <input type ="radio" name="gender" id="Unknown" value="Unknown" onChange={handleinput}/>
-         <label htmlFor="Non-binary">Prefer not to Say</label> 
+         <label htmlFor="Non-binary">{t("Prefer not to Say")}</label> 
          <span id="reqspan">*</span>
       </div>
-     <button type="submit">Submit</button>
+     <button type="submit" className='subbut'>{t("Submit")}</button>
     </form>
-    <li>  <a href="/Register">For User register click here</a> </li>
+    <li>  <a href="/Register">{t("For User register click here")}</a> </li>
   </div>
   <div >
   

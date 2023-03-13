@@ -155,3 +155,20 @@ overflow: hidden;
     width: 100px;
     margin-top: 30px;
 }
+.statcontain
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 200px;
+}
+.veriff
+{
+    background-color: rgb(82, 218, 82);
+}
+.banne
+{
+    background-color: rgb(230, 16, 16);
+    color: white;
+    cursor: pointer;
+}

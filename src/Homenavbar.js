@@ -1,10 +1,10 @@
 import React from 'react';
 import './Navbar.css';
 import { useTranslation } from 'react-i18next';
-const Navbar = () => {
-        const { t} = useTranslation();
-     return(
-        <div className="unavbar">
+const HomeNavbar = () => {
+      const {t} = useTranslation();
+      return(
+        <div className="homenavbar">
         
       
          <ul className="Register">
@@ -12,7 +12,7 @@ const Navbar = () => {
     <li>  <a href="/Register">{t("Register")}</a> </li>
     </ul>
         </div>
-     )
+      )
 
-     }
-export default Navbar;
+}
+export default HomeNavbar;

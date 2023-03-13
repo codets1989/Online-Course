@@ -65,6 +65,7 @@ function FacultyLogin()
         </div>
         
        <button className="form2" type="submit" >Login</button>
+       <br></br>
       </form>
       <li>  <a href="/Login">For User login click here</a> </li>
         </div>

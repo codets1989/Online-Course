@@ -42,7 +42,7 @@ function Login()
     }
     return(
         <div className="container">
-            <div className="title">Login</div>
+            <div className="title">User Login</div>
       <div className="form">
       <form className="form1" action="http://localhost:8000/Login" method="POST" onSubmit={loghandler} >
           
@@ -56,6 +56,7 @@ function Login()
         </div>
         
        <button className="form2" type="submit" >Login</button>
+       <br></br>
       </form>
       <li>  <a href="/faclogin">For Faculty login click here</a> </li>
         </div>

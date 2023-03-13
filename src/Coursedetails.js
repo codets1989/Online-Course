@@ -53,7 +53,7 @@ function Coursedetails(course)
         return (
         <div className="coursecontainer"> 
           <br/> <a href={"course/"+ item._id}> <span>{item.name}</span></a>
-          <br/> <span>Faculty:{item.faculty}</span>
+          <br/> <span>Faculty:{item.facname}</span>
           <br/> <span>Stream:{item.stream}</span>
           <br/> <span>Price:Rs.{item.price}</span>
           <br/> <button className="Drop" onClick={()=> dropdata(item._id)}>Drop Course</button> 

@@ -37,7 +37,7 @@ function Navbartext() {
         <div>
          <form className="search-bar" onSubmit={loghandlere}>
             <div className='searchtag'>
-         <input type="text" name="usersearch" id="usersearch" defaultValue={usersearch} onChange={handleinput} placeholder="Search" />
+         <input type="text" name="usersearch" id="usersearch" defaultValue={usersearch} onChange={handleinput} placeholder="Search" className='regin' />
          </div>
          <button type="submit">Search</button>
         

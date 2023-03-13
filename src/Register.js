@@ -15,7 +15,7 @@ function Register () {
     const handleChange = e => { 
         setLang(e.target.value);
         let loc = "http://localhost:3000/Register";
-        window.location.replace(loc + "?lng=" + e.target.value);
+        // window.location.replace(loc + "?lng=" + e.target.value);
         i18next.changeLanguage(e.target.value)
     }
   
@@ -86,6 +86,7 @@ function Register () {
         }
     }
 return (
+    <div>
     <div className ="container">
     <div className="form">
     <form action="http://localhost:8000/Register" method="POST" onSubmit={regi}>
@@ -100,52 +101,52 @@ return (
           <label htmlFor="Username">{t('Username')}</label>
            </div>
            <div>
-           <input type ="text" name="username" id="username" className='regin' value={userdetails.username} onChange={handleinput}  placeholder="Enter your Username" />
+           <input type ="text" name="username" id="username" className='regin' value={userdetails.username} onChange={handleinput}  placeholder={t("Enter your Username")} />
           <span id="reqspan">*</span>
           </div>
       <div>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">{t('Email')}</label>
       </div>
       <div>
-      <input type ="email" name="email" id="email" autoComplete="off"  className='regin' value={userdetails.email} onChange={handleinput}  placeholder="Enter your email"/>
+      <input type ="email" name="email" id="email" autoComplete="off"  className='regin' value={userdetails.email} onChange={handleinput}  placeholder={t("Enter your Email")}/>
       <span id="reqspan">*</span>
       </div>
       <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">{t('password')}</label>
       </div>
       <div>
-      <input type ="password" name="password" id="password" className='regin' value={userdetails.password} onChange={handleinput}  placeholder="Enter your password"/>
+      <input type ="password" name="password" id="password" className='regin' value={userdetails.password} onChange={handleinput}  placeholder={t("Enter your password")}/>
           <span id="reqspan">*</span>
       </div>
       <div>
-         Gender
+         {t("Gender")}
          <input type ="radio" name="gender" id="male" value="male" onChange={handleinput} /> 
-         <label htmlFor="Male">Male</label>
+         <label htmlFor="Male">{t("Male")}</label>
          <input type ="radio" name="gender" id="Female" value="Female" onChange={handleinput}/>
-         <label htmlFor="Female">Female</label> 
+         <label htmlFor="Female">{t("Female")}</label> 
          <input type ="radio" name="gender" id="Non-binary" value="Non-binary" onChange={handleinput}/> 
-         <label htmlFor="Non-binary">Non-binary</label>
+         <label htmlFor="Non-binary">{t("Non-binary")}</label>
          <input type ="radio" name="gender" id="Unknown" value="Unknown" onChange={handleinput}/>
-         <label htmlFor="Non-binary">Prefer not to Say</label> 
+         <label htmlFor="Non-binary">{t("Prefer not to Say")}</label> 
          <span id="reqspan">*</span>
       </div>
       <div>
-          Select you area of interests
+      {t("Select you area of interests")}
           <input type ="checkbox" name="interests" value="Science" onChange={handleinputs} /> 
-          <label htmlFor="Science">Science</label>
+          <label htmlFor="Science">{t("Science")}</label>
           <input type ="checkbox" name="interests" id="Arts" value="Arts" onChange={handleinputs} /> 
-          <label htmlFor="Arts">Arts</label>
+          <label htmlFor="Arts">{t("Arts")}</label>
           <input type ="checkbox" name="interests" value="Humanities" onChange={handleinputs} /> 
-          <label htmlFor="Humanities">Humanities</label>
+          <label htmlFor="Humanities">{t("Humanities")}</label>
           <input type ="checkbox" name="interests" value="Management" onChange={handleinputs} /> 
-          <label htmlFor="Management">Management</label>
+          <label htmlFor="Management">{t("Management")}</label>
           <input type ="checkbox" name="interests" value="Coding" onChange={handleinputs} /> 
-          <label htmlFor="Coding">Coding</label>
+          <label htmlFor="Coding">{t("Coding")}</label>
       </div>
    
-     <button type="submit" className='subbut'>Submit</button>
+     <button type="submit" className='subbut'>{t("Submit")}</button>
     </form>
-    <li>  <a href="/facreg">For Faculty Register click here</a> </li>
+    <li>  <a href="/facreg">{t("For Faculty Register click here")}</a> </li>
   </div>
   <div >
   
@@ -158,6 +159,8 @@ return (
                 })}
             </select>
         </div>
+       
+  </div>
   </div>
 );
 }

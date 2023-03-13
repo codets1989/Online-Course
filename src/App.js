@@ -3,8 +3,10 @@ import './Navbar.css';
 import Navbar from './Navbar';
 import Navbartext from './Navbartext';
 import FacNavbar from './FacNavbar';
+import HomeNavbar from './Homenavbar';
 import {BrowserRouter as Router,Route,Switch } from 'react-router-dom';
 import AdminNavbar from './admin/AdminNavbar';
+import Facna from './Facna';
 
 function App() {
   return (
@@ -12,8 +14,16 @@ function App() {
     <Router>
     <Switch>
       
-    <Route exact path = {["/", "/Login", "/Register" ]}>
+    <Route exact path = {[ "/Login", "/Register" ]}>
      <Navbar  /> 
+    
+     </Route>
+     <Route exact path = {[ "/facreg", "/faclogin" ]}>
+     <Facna /> 
+    
+     </Route>
+     <Route exact path = {["/"]}>
+     <HomeNavbar  /> 
     
      </Route>
      <Route exact path = {["/users/:userid" ,"/users/stream/:courseid","/searchresults","/users/course/:courseid"]}>

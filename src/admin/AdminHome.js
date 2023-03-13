@@ -1,6 +1,7 @@
 import React,{ useState, useEffect} from 'react';
 import { chee , adminlogout } from '../function/facultyfunlist';
 import Adminban from './Adminban';
+import Adminstats from './Adminstats';
 import logo from '../images/user.png'
 import top1 from '../images/reading.png'
 import top2 from '../images/read.png'
@@ -70,14 +71,11 @@ function AdminHome()
           {
                setch(<Adminban/>)
           }
-        //   else if (a==2)
-        //   {
-        //        setch(<FacultyVerified/>)
-        //   }
-        //   else if (a==3)
-        //   {
-        //        setch(<FacultyUnVerified/>)
-        //   }
+          else if (a==2)
+          {
+               setch(<Adminstats/>)
+          }
+      
 
      }
      if (isLoading) {
@@ -86,9 +84,9 @@ function AdminHome()
     return(
              <div className="grid">
                 <div className="facmenu">
-                       <a onClick={()=>chpage(0)}>Unverified Courses</a>
-                       <a onClick={()=>chpage(1)}>Ban User or Faculty</a>
-                       <a onClick={()=>chpage(2)}>Progress of the System</a>
+                       <a className='clicke' onClick={()=>chpage(0)}>Unverified Courses</a>
+                       <a  className='clicke' onClick={()=>chpage(1)}>Ban User or Faculty</a>
+                       <a className='clicke' onClick={()=>chpage(2)}>Stats of the System</a>
                        <div className='faclog' onClick={()=>adminlogout()}><span className='logi'>Logout<img src = {log} alt="logout" className="logout" height="25" width="25"/></span></div>
                 </div>
       

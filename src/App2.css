@@ -83,7 +83,7 @@ body
     width: 200px;
     height : 250px;
     margin-left: 50px;
-    margin-bottom: 130px;
+    margin-bottom: 200px;
 }
 .coursemessage
 {
@@ -180,4 +180,12 @@ padding: 10px;
     margin-left: 80rem;
     margin-top: 5rem;
     cursor: pointer;
+}
+.notification
+{
+    display: none;
+}
+.coursecontainers
+{
+    margin-top: -300px;
 }

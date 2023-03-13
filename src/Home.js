@@ -10,7 +10,7 @@ function Home ()
         <div className='firstcot'>
          <h1 className='firsthead'>Join our website right away to gain access to a huge <span className='firstspan'>selection of courses</span></h1>
          <p className='firstpar'>Our courses have been approved by professionals, allowing you to develop your skills</p>
-         <button className='firstbut'><span className='butext'>Register now</span></button>
+         <a href='/Register'><button className='firstbut'><span className='butext'>Register now</span></button></a>
         </div>
         <div className='secondcot'>
            <h1 className='secondhead'>Our Services</h1>

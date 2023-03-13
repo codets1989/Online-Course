@@ -83,7 +83,7 @@ const checkban = (msg)=>
        
             <th>{item.fullname}</th>
             <th>{item.username}</th>
-            <th>  { <button id={item._id} onClick={()=>banusers(item._id)}>Ban this User</button>}</th>
+            <th>  { <button id={item._id} className="banne" onClick={()=>banusers(item._id)}>Ban this User</button>}</th>
             
            
              </tr>

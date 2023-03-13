@@ -72,7 +72,7 @@ const Adminun = () =>
      }
     return(
         <div>
-        <h2 className="tabtitle">Verified Courses</h2>
+        <h2 className="tabtitle">Unverified Courses</h2>
         <table className="factable">
            <thead className="factabhead">
                <tr>
@@ -103,7 +103,7 @@ const Adminun = () =>
                <th>{item.stream}</th>
                <th>Rs. {item.price}</th>
                <th>{item.video.length}</th>
-               <th>  { <button id={item._id} onClick={()=>{verify(item._id)}}>Verify this Course</button>}</th>
+               <th>  { <button id={item._id} className="veriff" onClick={()=>{verify(item._id)}}>Verify this Course</button>}</th>
                
               
                 </tr>

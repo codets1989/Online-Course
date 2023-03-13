@@ -126,6 +126,7 @@ body
     width:300px;
     height:80px;
     margin-top: 60px;
+    cursor: pointer;
 }
 .butext
 {
@@ -219,4 +220,24 @@ body
     z-index: 10;
     box-shadow: 0 18px 35px -5px rgb(17 18 19 / 4%);
 
+}
+.colo
+{
+ 
+    height: 790px;
+    width: 30%;
+    float: right;
+    position: absolute;
+    background-color: #4059ff;
+    overflow: hidden;
+    bottom: 0px;
+    right: 0px;
+}
+.form2
+{
+    background-color: #6affe8;
+    width: 120px;
+    font-size: 18px;
+    float: right;
+    cursor: pointer;
 }
