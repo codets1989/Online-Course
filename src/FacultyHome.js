@@ -38,6 +38,7 @@ function FacultyHome()
                  body:JSON.stringify(rec)
              }).then((result)=>result.json()).then(data=>{
                 console.log(data.length);
+                data.sort((r1, r2) => (r1.size > r2.size) ? -1 : (r1.size < r2.size) ? 1 : 0);
                 for (i=0;i<data.length;i++)
                 {
                   tl[i] = data[i]

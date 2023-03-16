@@ -12,9 +12,21 @@ import  '../Faculty.css';
 function AdminHome()
 {
     var i = 0;
+    var output=[]
     const [isLoading, setLoading] = useState(true);
      const [datas, setdatas] = useState();
      const [tl,settl] = useState([[],[],[]])
+    //  const compare = (a,b) =>
+    //  {
+    //     if (a.size > b.size) {
+    //         return 1;
+    //       }
+    //       if (a.size < b.size) {
+    //         return -1;
+    //       }
+    //       return 0;
+
+    //  }
      useEffect(()=>
      {
          document.body.style.backgroundImage = "none";
@@ -50,7 +62,8 @@ function AdminHome()
                              'Content-type' : 'application/json'
                          },
                      }).then((result)=>result.json()).then(data=>{
-                        console.log(data.length);
+                        data.sort((r1, r2) => (r1.size > r2.size) ? -1 : (r1.size < r2.size) ? 1 : 0);
+                         console.log(output)
                         for (i=0;i<data.length;i++)
                         {
                           tl[i] = data[i]

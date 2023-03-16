@@ -7,7 +7,7 @@ const chee = (id) =>
     }
     else
     {
-      var msg = id.answers + "  " +  '(' + id.size + ')'
+      var msg = id.answers[0] + "  " +  '(' + id.size + ')'
       return msg
     }
 } 
