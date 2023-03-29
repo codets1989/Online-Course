@@ -1,8 +1,9 @@
 import React,{useState} from 'react';
+import { handlenep,handleng } from './function/navfunlist';
 import logo from './images/home.png'
 import './Navbar.css';
 function Navbartext() {
-
+    const [lang, setLang] = useState('en');
     const [usersearch,setusersearch] =  useState ();
     const link = localStorage.getItem("id")
     const handleinput = (e) =>
@@ -32,7 +33,7 @@ function Navbartext() {
     return(
     <div className = "navcontainer">
         <div>
-
+        <div> <a href={'//localhost:3000/users/'+ link}><img src={logo} height="40" width="50" alt="homeicon"/></a></div>
         </div>
         <div>
          <form className="search-bar" onSubmit={loghandlere}>
@@ -44,8 +45,18 @@ function Navbartext() {
         
          </form> 
          </div>
-         <div> <a href={'//localhost:3000/users/'+ link}><img src={logo} height="40" width="50" alt="homeicon"/></a></div>
-
+      
+         <div class="dropdown">
+        <li>Language
+        <i className="fa fa-caret-down"></i>
+      </li>
+          <div class="dropdown-content">
+          <a href="#" onClick={handleng}>English</a>
+          <a href="#" onClick={handlenep}>Nepali</a>
+          </div>
+         </div>
+    
+       
      
          
     </div>

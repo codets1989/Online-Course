@@ -123,12 +123,11 @@ overflow: hidden;
 {
     text-align: center;
 }
-.facho
-{
-  display: flex;
+
+  /* display: flex;
   width: 100%;
-  flex-direction: row-reverse;
-}
+  flex-direction: row-reverse; */
+
 .faclog
 {
     margin-top: 480px;
@@ -171,4 +170,11 @@ overflow: hidden;
     background-color: rgb(230, 16, 16);
     color: white;
     cursor: pointer;
+}
+.faclang
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 }
