@@ -14,12 +14,12 @@ const Facna = () => {
     <li>  <a href="/facreg">{t("Register")}</a> </li>
     </ul>
     <div class="dropdown">
-        <li>Language
+        <li>{t("Language")}
         <i className="fa fa-caret-down"></i>
       </li>
           <div class="dropdown-content">
-          <a href="#" onClick={handleng}>English</a>
-          <a href="#" onClick={handlenep}>Nepali</a>
+          <a href="#" onClick={handleng}>{t("English")}</a>
+          <a href="#" onClick={handlenep}>{t("Nepali")}</a>
           </div>
          </div>
         </div>

@@ -1,12 +1,17 @@
 import {useEffect,useState} from 'react';
 import { useParams} from 'react-router-dom'
 import {Menu} from './function/functionlist'
+import Chat from './Chat';
+import { useTranslation } from 'react-i18next';
 function Coursepage ()
 {
  const [cordata,setcordata] = useState([
      
  ]);
+ const { t } = useTranslation(); 
  const {courseid} = useParams();
+ const username = localStorage.getItem("student_username")
+    const lol = localStorage.getItem("id");
  const checkcourse = () =>
 {
       const lol = courseid;
@@ -48,6 +53,7 @@ const Navigate = () =>
 useEffect(()=>
 {
  document.body.style.backgroundImage = "none";
+ document.body.style.backgroundColor = "#ECC9EE"
  checkcourse();
  
 },[]
@@ -63,16 +69,18 @@ return(
           return (
           <div className="coursecontainer"> 
             <br/> <a href={"//localhost:3000/users/course/"+ item._id}> <span>{item.name}</span></a>
-            <br/> <span>Faculty:{item.facname}</span>
-            <br/> <span>Stream:{item.stream}</span>
-            <br/> <span>Price:Rs.{item.price}</span>
+            <br/> <span>{t("Faculty")}:{item.facname}</span>
+            <br/> <span>{t("Stream")}:{t(item.stream)}</span>
+            <br/> <span>{t("Difficulty")}:{t(item.price)}</span>
             <br/> <button className="add" onClick={()=> printdata(item._id)}>Add Course</button> 
           </div>
           )
       })}
       
    
-    
+    <div>
+        <Chat username={username} id={lol}/>
+    </div>
     </div>
 )
 }

@@ -2,6 +2,8 @@ import React,{useState} from 'react';
 import './App.css'
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
+import sanitizeHtml from 'sanitize-html';
+import Chat from './Chat';
 const languages = [
     { value: 'en', text: "Options" },
     { value: 'en', text: "English" },
@@ -34,32 +36,13 @@ function Facultyregister () {
         const value =e.target.value;
         setuserdetails({...userdetails,[name]:value})
     }
-    const handleinputs = (e) =>
-    {
-        const value = e.target.value;
-        const check = e.target.checked;
-        const temp = [...array];
-      if (check === true)
-      {temp.push(value);
-    //   array.push(value);
-      }
-      else if (check == false)
-      {
-          
-          temp.splice(temp.indexOf(value),1)
-      }
-      console.log(temp);
-      setarray(temp);
-     
-    //    console.log(array);
-       setuserdetails({...userdetails,interests:temp})
-    }
    
     const regi = (e) =>
     {
         e.preventDefault();
         
-        const regdata = JSON.stringify(userdetails);
+        var regdata = JSON.stringify(userdetails);
+        var regdata = sanitizeHtml(regdata)
         fetch('http://localhost:8000/faculty/register',
         {
            mode:'cors',
@@ -136,6 +119,7 @@ return (
                 })}
             </select>
         </div>
+        <Chat username="none" id="none"/>
   </div>
 );
 }

@@ -1,10 +1,15 @@
 import React,{useEffect,useState} from 'react'
 import './App2.css';
+import sanitizeHtml from 'sanitize-html';
 import {Menu} from './function/functionlist'
+import Chat from './Chat';
+import { useTranslation } from 'react-i18next';
 function Search() 
 {
-       
+    const username = localStorage.getItem("student_username")
+    const lol = localStorage.getItem("id");
     const [corr,setcorr] = useState([]);
+    const { t } = useTranslation(); 
     const checksearch = () =>
     {
             const item = JSON.parse( (localStorage.getItem("course")));
@@ -15,6 +20,7 @@ function Search()
     useEffect(()=>
     {
         document.body.style.backgroundImage = "none";
+        document.body.style.backgroundColor = "#ECC9EE"
            checksearch() 
            
         
@@ -24,7 +30,7 @@ function Search()
     const  printdata = (id) =>
 {
   const lol = localStorage.getItem("id");
-  const recd ={"student": lol,"course" :id }
+  var recd ={"student": lol,"course" :id }
    fetch('http://localhost:8000/addcourses',{
             mode: 'cors',
              method :'PUT',
@@ -58,10 +64,10 @@ const Navigate = () =>
                    {corr.map((soi) => {
                         return (
                         <div className="coursecontainer"> 
-                          <br/> <a href={"course/"+ soi._id}> <span>{soi.name}</span></a>
-                          <br/> <span>Faculty:{soi.facname}</span>
-                          <br/> <span>Stream:{soi.stream}</span>
-                          <br/> <span>Price:Rs.{soi.price}</span>
+                          <br/> <a href={"users/course/"+ soi._id}> <span>{soi.name}</span></a>
+                          <br/> <span>{t("Faculty")}:{soi.facname}</span>
+          <br/> <span>{t("Stream")}:{t(soi.stream)}</span>
+          <br/> <span>{t("Difficulty")}:{t(soi.price)}</span>
                           <br/> <button className="add" onClick={()=> printdata(soi._id)}>Add Course</button> 
                         </div>
                         )
@@ -73,7 +79,9 @@ const Navigate = () =>
              }
   
     </div>
-   
+    <div>
+        <Chat username={username} id={lol}/>
+    </div>
     </div>
  )
  

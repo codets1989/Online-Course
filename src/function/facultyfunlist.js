@@ -1,5 +1,7 @@
+
 const chee = (id) =>
 {
+    
     if(id.answers=== undefined)
     {
         console.log(" mes :"+ id)

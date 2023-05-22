@@ -1,7 +1,9 @@
 import React,{useState} from 'react';
 import './App.css'
 import { useTranslation } from 'react-i18next';
+import sanitizeHtml from 'sanitize-html';
 import i18next from 'i18next';
+import Chat from './Chat';
 const languages = [
     { value: 'en', text: "Options" },
     { value: 'en', text: "English" },
@@ -59,7 +61,8 @@ function Register () {
     {
         e.preventDefault();
         
-        const regdata = JSON.stringify(userdetails);
+        var regdata = JSON.stringify(userdetails);
+        var regdata = sanitizeHtml(regdata);
         fetch('http://localhost:8000/Register',
         {
            mode:'cors',
@@ -142,6 +145,7 @@ return (
           <label htmlFor="Management">{t("Management")}</label>
           <input type ="checkbox" name="interests" value="Coding" onChange={handleinputs} /> 
           <label htmlFor="Coding">{t("Coding")}</label>
+          <span id="reqspan">*</span>
       </div>
    
      <button type="submit" className='subbut'>{t("Submit")}</button>
@@ -161,6 +165,7 @@ return (
         </div>
        
   </div>
+  <Chat username="none" id="none"/>
   </div>
 );
 }

@@ -275,4 +275,133 @@ body
     background-color: dodgerblue;
     height: 48px;
   }  
+.chat
+{
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    right:0;
+    max-width: 540px;
+    width: 440px;
+    border-left: 2px solid rgb(171, 168, 168);
+    border-right:2px solid rgb(143, 143, 143);
+    border-top:2px solid rgb(142, 141, 141);
+    background-color:dodgerblue;
+    color:white;
+    font-size:20px;
+    height: 65px;
+   
+}    
+.msgcontainer
+{
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    height: 400px;
+    display: none;
+}
+.userscont
+{
+    border-right: 2px solid black ;
+    width:140px;
+    overflow: scroll;
     
+}
+.msgsent
+{
+    width: 300px;
+}
+/* .chat:hover .msgcontainer
+{
+    display: flex;
+} */
+.send_msg
+{
+   width: 360px;
+}
+.send_text
+{
+    width: 300px;
+    height: 25px;
+}
+.chat-messages
+{
+    height: 400px;
+    max-height: 360px;
+    width: 400px;
+    overflow-y: scroll;
+  
+}
+.sended {
+    justify-content: flex-end;
+    padding: 5px;
+  }
+.recieved {
+    justify-content: flex-start;
+    padding: 5px;
+    position: relative;
+   
+    
+  } 
+.recieved > .content{
+    
+    background-color: white;
+    font-size: 18px;
+
+  }   
+   
+    
+.sended>.content
+{
+  background-color:dodgerblue ;
+  font-size: 18px;
+  
+}
+.messagese
+{
+    display: flex;
+}
+.contactcont
+{
+   border-bottom: 2px solid black;
+}
+.chatopener
+{
+    text-align: center;
+}
+.notdiv
+{
+    display: flex;
+    position: absolute;
+    top:50%;
+    right: 0;
+    
+}
+.nottext
+{
+    font-size: 16px;
+    background-color:#ECC9EE;
+    justify-content: flex-end;
+    border: 2px solid black;
+    display: none;
+    width: 340px;
+}
+.crossimg
+{
+    
+    display: inline;
+    right: 0;
+    position: relative; 
+    cursor: pointer;
+}
+.notbutton
+{
+    position: relative;
+    right: -190px;
+    cursor: pointer;
+}
+.notimg
+{
+    cursor: pointer;
+}

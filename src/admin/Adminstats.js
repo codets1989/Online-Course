@@ -2,8 +2,10 @@ import { useState,useEffect } from "react"
 import st1 from '../images/graduates.png'
 import st2 from '../images/teacher.png'
 import st3 from '../images/book.png'
+import { useTranslation } from 'react-i18next';
 const Adminstats = () =>
 {
+    const { t } = useTranslation(); 
     var [stats, setstats] = useState([]);
     const [isLoadingg, setLoadingg] = useState(true);
     useEffect(()=>
@@ -43,15 +45,15 @@ const Adminstats = () =>
                             <div className="statcontain">
                         <div>
                         <img src = {st1} height="300" width="300" alt="stats1"></img>
-                        <h2> Number of Students: {item.students}</h2>
+                        <h2> {t("Number of Students")}: {item.students}</h2>
                         </div>
                         <div>
                         <img src = {st2} height="300" width="300" alt="stats1"></img>
-                        <h2>Number of Faculties:{item.faculties}</h2>
+                        <h2>{t("Number of Faculties")}:{item.faculties}</h2>
                         </div>
                         <div>
                         <img src = {st3} height="300" width="300" alt="stats1"></img>
-                        <h2>Number of Courses:{item.courses}</h2>
+                        <h2>{t("Number of Courses")}:{item.courses}</h2>
                         </div>
                         </div>
                         )

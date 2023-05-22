@@ -35,7 +35,7 @@ body
 .menu
 {
  grid-row:1/7;
- border-right: 3px solid rgb(255, 255, 255) ;
+ /* border-right: 3px solid rgb(255, 255, 255) ; */
 }
 .cospage
 {
@@ -64,7 +64,7 @@ body
 .menu,.message,.courses
 {
  
-    background-color: white;
+    background-color:#ECC9EE
     
  
 }
@@ -78,8 +78,8 @@ body
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    background-color:white;
-    border : 5px ridge rgb(243, 123, 197);
+    background-color:#05BFDB;
+    border : 5px ridge #FFDCB6;
     width: 200px;
     height : 250px;
     margin-left: 50px;
@@ -122,12 +122,14 @@ body
 {
     padding:50px;
     font-size: 30px;
+   
 }
 .notadd
 {
     float:right;
     margin-top:25px;
     padding-left:20px;
+    background-color:#ECC9EE;
 }
 .spanlist{
     color:black;
@@ -176,8 +178,7 @@ padding: 10px;
 .sos{
     width: 10%;
     position: relative;
-    float: right;
-    margin-left: 80rem;
+    float: left;
     margin-top: 5rem;
     cursor: pointer;
 }

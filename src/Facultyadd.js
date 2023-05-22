@@ -1,9 +1,12 @@
 import React from "react";
+import sanitizeHtml from 'sanitize-html';
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import {storage } from "./firebaseConfig"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 function Facultyadd() {
+    const { t } = useTranslation();
     const [facdetails,setfacdetails] =  useState ({
         course_name:"",
         price:"",
@@ -17,14 +20,15 @@ function Facultyadd() {
         return (<div>
             {console.log(counter.counter)}
         <input type="file" name={counter.counter} className="facin"  onChange={(e)=>handleChange(e,counter.counter)} accept="video/*" />
-        <p id={counter.counter} className="faclab">Not Uploaded</p>
+        <p id={counter.counter} className="faclab">{t("Not Uploaded")}</p>
          </div>)
       };
     const [vidup,setvidup] = useState([])
     function sendfac (e)
     {
           e.preventDefault();
-          const regdata = JSON.stringify(facdetails);
+          var regdata = JSON.stringify(facdetails);
+          var regdata = sanitizeHtml(regdata)
           fetch('http://localhost:8000/faculty/add',
           {
              mode:'cors',
@@ -139,9 +143,9 @@ function Facultyadd() {
     <div className="facadde">
            
              <form action="" method="POST" className="facform" onSubmit={sendfac}>
-                <h2>Add Course</h2>
+                <h2>{t("Add Course")}</h2>
               <div> 
-                <label for = "course_name" className="faclab">Course Name</label>
+                <label for = "course_name" className="faclab">{t("Course Name")}</label>
                 <br></br>
                 <br></br>
                 <input type="text" name="course_name" className="facin" onChange={handleinput}/>
@@ -149,7 +153,7 @@ function Facultyadd() {
                 <br></br>
                 </div> 
                 <div>
-                <label for = "price" className="faclab">Course Price</label>
+                <label for = "price" className="faclab">{t("Course Difficulty")}</label>
                  <br></br>
                  <br></br>
                  
@@ -158,29 +162,29 @@ function Facultyadd() {
                 <div>
                     <br></br>
                     <br></br>
-                    <label for="stream" className="faclab">Select Stream</label>
+                    <label for="stream" className="faclab">{t("Select Stream")}</label>
                     <br></br>
                     <br></br>
                     <select name="stream" className="facselect" onChange={handleinput}>
-                     <option value='Coding'>Coding</option>
-                     <option value='Management'>Management</option>
-                     <option value='Science'>Science</option>
-                     <option value='Arts'>Arts</option>
-                     <option value='Humanities'>Humanities</option>
+                     <option value='Coding'>{t("Coding")}</option>
+                     <option value='Management'>{t("Management")}</option>
+                     <option value='Science'>{t("Science")}</option>
+                     <option value='Arts'>{t("Arts")}</option>
+                     <option value='Humanities'>{t("Humanities")}</option>
                     </select>
                     <br></br>
                     <br></br>
                 </div>
                 <div>
                     <input type="file" name="file" className="facin"  onChange={(e)=>handleChange(e,0)}  accept="video/*" />
-                    <p id='0' className="faclab">Not Uploaded</p> 
+                    <p id='0' className="faclab">{t("Not Uploaded")}</p> 
                 </div>
                 {vidup}
                 <div>
-                <button type="button" className="addfacb" onClick={adddiv}>Add More Videos</button>
+                <button type="button" className="addfacb" onClick={adddiv}>{t("Add More Videos")}</button>
                 <br></br>
                 <br></br>
-                <button type="submit" className="addfacb" >Submit</button>
+                <button type="submit" className="addfacb" >{t("Submit")}</button>
                 </div>
                 </form>
                

@@ -1,7 +1,9 @@
 import {useEffect,useState} from 'react';
 import './App2.css'
+import { useTranslation } from 'react-i18next';
 function Coursedetails(course)
 {
+    const { t } = useTranslation(); 
     const [corpdata,setcorpdata] = useState([
      
     ]);
@@ -44,6 +46,7 @@ function Coursedetails(course)
 }  
   useEffect(()=>
   {
+    document.body.style.backgroundColor = "#ECC9EE"
     checkcourse();
   },[]
   )
@@ -53,10 +56,10 @@ function Coursedetails(course)
         return (
         <div className="coursecontainer"> 
           <br/> <a href={"course/"+ item._id}> <span>{item.name}</span></a>
-          <br/> <span>Faculty:{item.facname}</span>
-          <br/> <span>Stream:{item.stream}</span>
-          <br/> <span>Price:Rs.{item.price}</span>
-          <br/> <button className="Drop" onClick={()=> dropdata(item._id)}>Drop Course</button> 
+          <br/> <span>{t("Faculty")}:{item.facname}</span>
+          <br/> <span>{t("Stream")}:{t(item.stream)}</span>
+          <br/> <span>{t("Difficulty")}:{t(item.price)}</span>
+          <br/> <button className="Drop" onClick={()=> dropdata(item._id)}>{t("Drop Course")}</button> 
         </div>
         )
     })}

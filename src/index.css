@@ -75,9 +75,13 @@ body
     padding:25px 30px;
     margin-top: 150px;
     margin-left: 500px;
-    width: 600px;
+    width: 750px;
     line-height: 300%;
    
+}
+.form
+{
+    width: 750px;
 }
 .container .title
 {

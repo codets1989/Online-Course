@@ -1,7 +1,8 @@
-
+import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from "react";
 const Adminban = () =>
 {
+    const { t } = useTranslation(); 
     const [data, setdata] = useState([]);  
     useEffect(()=>{
          checkusers('students');    
@@ -59,18 +60,18 @@ const checkban = (msg)=>
     return(
         <div>
         <div className="bantitle">
-        <h2 className="tabtitle">Ban Table</h2>
+        <h2 className="tabtitle">{t("Ban Table")}</h2>
         <select className="banselect" name="options" onChange={(e)=>handleinput(e)}>
-            <option value="students">Students</option>
-            <option value="faculties">Faculties</option>
+            <option value="students">{t("Students")}</option>
+            <option value="faculties">{t("Faculties")}</option>
         </select>
         </div>
         <table className="factable">
            <thead className="factabhead">
                <tr>
-                   <th>Full Name</th>
-                   <th>Username</th>
-                   <th>Action</th>
+                   <th>{t("Full Name")}</th>
+                   <th>{t("Username")}</th>
+                   <th>{t("Action")}</th>
                </tr>
            </thead>
            <tbody>
@@ -83,7 +84,7 @@ const checkban = (msg)=>
        
             <th>{item.fullname}</th>
             <th>{item.username}</th>
-            <th>  { <button id={item._id} className="banne" onClick={()=>banusers(item._id)}>Ban this User</button>}</th>
+            <th>  { <button id={item._id} className="banne" onClick={()=>banusers(item._id)}>{t("Ban this User")}</button>}</th>
             
            
              </tr>

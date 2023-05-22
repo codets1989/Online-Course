@@ -1,5 +1,6 @@
 import React,{ useState, useEffect} from 'react';
 import { chee , adminlogout } from '../function/facultyfunlist';
+import { useTranslation } from 'react-i18next';
 import Adminban from './Adminban';
 import Adminstats from './Adminstats';
 import logo from '../images/user.png'
@@ -9,8 +10,10 @@ import top3 from '../images/study.png'
 import log from '../images/logout.png'
 import Adminun from './Adminun';
 import  '../Faculty.css';
+import Chat from '../Chat';
 function AdminHome()
 {
+    const { t } = useTranslation(); 
     var i = 0;
     var output=[]
     const [isLoading, setLoading] = useState(true);
@@ -30,7 +33,7 @@ function AdminHome()
      useEffect(()=>
      {
          document.body.style.backgroundImage = "none";
-     
+         document.body.style.backgroundColor = "#ECC9EE"
             checklogin();
             top();
      },[])
@@ -49,6 +52,7 @@ function AdminHome()
                  body:JSON.stringify(rec)
              }).then((result)=>result.json()).then(data=>{
                 setdatas(data.username);
+
                 })
                 
             }
@@ -97,10 +101,10 @@ function AdminHome()
     return(
              <div className="grid">
                 <div className="facmenu">
-                       <a className='clicke' onClick={()=>chpage(0)}>Unverified Courses</a>
-                       <a  className='clicke' onClick={()=>chpage(1)}>Ban User or Faculty</a>
-                       <a className='clicke' onClick={()=>chpage(2)}>Stats of the System</a>
-                       <div className='faclog' onClick={()=>adminlogout()}><span className='logi'>Logout<img src = {log} alt="logout" className="logout" height="25" width="25"/></span></div>
+                       <a className='clicke' onClick={()=>chpage(0)}>{t("Unverified Courses")}</a>
+                       <a  className='clicke' onClick={()=>chpage(1)}>{t("Ban User or Faculty")}</a>
+                       <a className='clicke' onClick={()=>chpage(2)}>{t("Stats of the System")}</a>
+                       <div className='faclog' onClick={()=>adminlogout()}><span className='logi'>{t("Logout")}<img src = {log} alt="logout" className="logout" height="25" width="25"/></span></div>
                 </div>
       
                 <div className='adcourse'>
@@ -113,10 +117,10 @@ function AdminHome()
                 <div className='user_details'>
                     <div className='profile'>
                        <img src={logo} alt='usericon' height='300'  width='300' className='userlogo'/> 
-                       <span className='weltext'>Welcome {datas}</span>
+                       <span className='weltext'>{t("Welcome")} {datas}</span>
                        </div>
                        <div className='top-courses'>
-                        <span className='titl-top'>Top Courses</span>
+                        <span className='titl-top'>{t("Top Courses")}</span>
                         <div className='topl'>
                         <img src={top1} alt='usericon' height='50'  width='50' className='toplogo'/><p>{chee(tl[0])}</p> 
                         </div>
@@ -127,6 +131,9 @@ function AdminHome()
                         <img src={top3} alt='usericon' height='50'  width='50' className='toplogo'/> <p>{chee(tl[2])}</p> 
                         </div>
                        </div>
+                </div>
+                <div>
+                    <Chat username="Admin" id="Admin"/>
                 </div>
              </div>
     )

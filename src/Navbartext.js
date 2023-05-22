@@ -1,8 +1,11 @@
 import React,{useState} from 'react';
 import { handlenep,handleng } from './function/navfunlist';
 import logo from './images/home.png'
+import { useTranslation } from 'react-i18next';
+import sanitizeHtml from 'sanitize-html';
 import './Navbar.css';
 function Navbartext() {
+    const { t } = useTranslation();
     const [lang, setLang] = useState('en');
     const [usersearch,setusersearch] =  useState ();
     const link = localStorage.getItem("id")
@@ -13,8 +16,8 @@ function Navbartext() {
     }
     const loghandlere =(e)=>
     {
-        const dend = {"course":usersearch}
-        console.log(dend);
+        var usersee = sanitizeHtml(usersearch)
+        var dend = {"course":usersee}
         e.preventDefault();
          fetch('http://localhost:8000/Search',{
             mode: 'cors',
@@ -38,21 +41,21 @@ function Navbartext() {
         <div>
          <form className="search-bar" onSubmit={loghandlere}>
             <div className='searchtag'>
-         <input type="text" name="usersearch" id="usersearch" defaultValue={usersearch} onChange={handleinput} placeholder="Search" className='regin' />
+         <input type="text" name="usersearch" id="usersearch" defaultValue={usersearch} onChange={handleinput} placeholder={t("Search")} className='regin' />
          </div>
-         <button type="submit">Search</button>
+         <button type="submit">{t("Search")}</button>
         
         
          </form> 
          </div>
       
          <div class="dropdown">
-        <li>Language
+        <li>{t("Language")}
         <i className="fa fa-caret-down"></i>
       </li>
           <div class="dropdown-content">
-          <a href="#" onClick={handleng}>English</a>
-          <a href="#" onClick={handlenep}>Nepali</a>
+          <a href="#" onClick={handleng}>{t("English")}</a>
+          <a href="#" onClick={handlenep}>{t("Nepali")}</a>
           </div>
          </div>
     

@@ -15,7 +15,7 @@ const  AdminCourse = () =>
      useEffect(()=>
      {
          document.body.style.backgroundImage = "none";
-     
+         document.body.style.backgroundColor = "#ECC9EE"
             checklogin();
             checkcourse();
      },[])
@@ -74,7 +74,7 @@ if (isLoading) {
       }
     return(
              <div className="grid-container">
-               <div className='menu'>
+               <div className='menuu'>
                <div className='adprofile'>
                        <img src={logo} alt='usericon' height='300'  width='300' className='userlogo'/> 
                        <span className='weltext'>Welcome {datas}</span>
